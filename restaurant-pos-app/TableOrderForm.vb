@@ -98,6 +98,53 @@
         Next
     End Sub
 
+    Private Sub btnSaveBillFile_Click(sender As Object, e As EventArgs) Handles btnSaveBillFile.Click
+        If orderItems.Count = 0 Then
+            MessageBox.Show("Nuk ka produkte në porosi për të ruajtur faturën.")
+            Return
+        End If
+
+        Try
+            ' Generate filename with table number and timestamp
+            Dim timestamp As String = DateTime.Now.ToString("yyyy-MM-dd_HH-mm-ss")
+            Dim filename As String = $"Table{tableId}_Bill_{timestamp}.txt"
+            Dim desktopPath As String = Environment.GetFolderPath(Environment.SpecialFolder.Desktop)
+            Dim fullPath As String = IO.Path.Combine(desktopPath, filename)
+
+            ' Generate bill content
+            Dim billContent As New System.Text.StringBuilder()
+            billContent.AppendLine("========================================")
+            billContent.AppendLine("         RESTAURANT POS SYSTEM")
+            billContent.AppendLine("========================================")
+            billContent.AppendLine($"Table: {tableId}")
+            billContent.AppendLine($"Date: {DateTime.Now.ToString("dd/MM/yyyy HH:mm")}")
+            billContent.AppendLine("")
+            billContent.AppendLine("Items:")
+            billContent.AppendLine("----------------------------------------")
+
+            Dim total As Decimal = 0
+            For Each item In orderItems
+                Dim itemTotal As Decimal = item.Product.Price * item.Quantity
+                total += itemTotal
+                billContent.AppendLine($"- {item.Product.Name} x{item.Quantity}")
+                billContent.AppendLine($"  {item.Product.Price.ToString("C")} each = {itemTotal.ToString("C")}")
+            Next
+
+            billContent.AppendLine("----------------------------------------")
+            billContent.AppendLine($"TOTAL: {total.ToString("C")}")
+            billContent.AppendLine("========================================")
+            billContent.AppendLine("    Thank you for dining with us!")
+            billContent.AppendLine("========================================")
+
+            ' Save to file
+            IO.File.WriteAllText(fullPath, billContent.ToString())
+
+            MessageBox.Show($"Fatura u ruajt me sukses në Desktop:{Environment.NewLine}{filename}", "Fatura u ruajt", MessageBoxButtons.OK, MessageBoxIcon.Information)
+
+        Catch ex As Exception
+            MessageBox.Show($"Gabim gjatë ruajtjes së faturës: {ex.Message}", "Gabim", MessageBoxButtons.OK, MessageBoxIcon.Error)
+        End Try
+    End Sub
 End Class
 
 

@@ -29,6 +29,7 @@ Partial Class TableOrderForm
         btnRemoveItem = New Button()
         btnLeaveTable = New Button()
         btnMarkAsPaid = New Button()
+        btnSaveBillFile = New Button()
         SuspendLayout()
         ' 
         ' lstMenu
@@ -80,7 +81,7 @@ Partial Class TableOrderForm
         ' 
         ' btnLeaveTable
         ' 
-        btnLeaveTable.Location = New Point(721, 651)
+        btnLeaveTable.Location = New Point(735, 592)
         btnLeaveTable.Name = "btnLeaveTable"
         btnLeaveTable.Size = New Size(112, 34)
         btnLeaveTable.TabIndex = 5
@@ -89,18 +90,28 @@ Partial Class TableOrderForm
         ' 
         ' btnMarkAsPaid
         ' 
-        btnMarkAsPaid.Location = New Point(889, 651)
+        btnMarkAsPaid.Location = New Point(904, 592)
         btnMarkAsPaid.Name = "btnMarkAsPaid"
         btnMarkAsPaid.Size = New Size(112, 34)
         btnMarkAsPaid.TabIndex = 6
         btnMarkAsPaid.Text = "Paguaj"
         btnMarkAsPaid.UseVisualStyleBackColor = True
         ' 
+        ' btnSaveBillFile
+        ' 
+        btnSaveBillFile.Location = New Point(158, 565)
+        btnSaveBillFile.Name = "btnSaveBillFile"
+        btnSaveBillFile.Size = New Size(112, 61)
+        btnSaveBillFile.TabIndex = 7
+        btnSaveBillFile.Text = "Ruaj Faturen"
+        btnSaveBillFile.UseVisualStyleBackColor = True
+        ' 
         ' TableOrderForm
         ' 
         AutoScaleDimensions = New SizeF(10F, 25F)
         AutoScaleMode = AutoScaleMode.Font
         ClientSize = New Size(1255, 720)
+        Controls.Add(btnSaveBillFile)
         Controls.Add(btnMarkAsPaid)
         Controls.Add(btnLeaveTable)
         Controls.Add(btnRemoveItem)
@@ -121,4 +132,5 @@ Partial Class TableOrderForm
     Friend WithEvents btnRemoveItem As Button
     Friend WithEvents btnLeaveTable As Button
     Friend WithEvents btnMarkAsPaid As Button
+    Friend WithEvents btnSaveBillFile As Button
 End Class

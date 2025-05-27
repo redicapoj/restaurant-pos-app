@@ -54,9 +54,9 @@ Partial Class TableOrderForm
         ' 
         ' btnAddProduct
         ' 
-        btnAddProduct.Location = New Point(158, 360)
+        btnAddProduct.Location = New Point(158, 381)
         btnAddProduct.Name = "btnAddProduct"
-        btnAddProduct.Size = New Size(121, 66)
+        btnAddProduct.Size = New Size(121, 85)
         btnAddProduct.TabIndex = 2
         btnAddProduct.Text = "Shto Produkt"
         btnAddProduct.UseVisualStyleBackColor = True
@@ -72,36 +72,36 @@ Partial Class TableOrderForm
         ' 
         ' btnRemoveItem
         ' 
-        btnRemoveItem.Location = New Point(340, 360)
+        btnRemoveItem.Location = New Point(340, 381)
         btnRemoveItem.Name = "btnRemoveItem"
-        btnRemoveItem.Size = New Size(112, 69)
+        btnRemoveItem.Size = New Size(112, 85)
         btnRemoveItem.TabIndex = 4
         btnRemoveItem.Text = "Fshi Produktin"
         btnRemoveItem.UseVisualStyleBackColor = True
         ' 
         ' btnLeaveTable
         ' 
-        btnLeaveTable.Location = New Point(735, 592)
+        btnLeaveTable.Location = New Point(158, 530)
         btnLeaveTable.Name = "btnLeaveTable"
-        btnLeaveTable.Size = New Size(112, 34)
+        btnLeaveTable.Size = New Size(112, 65)
         btnLeaveTable.TabIndex = 5
         btnLeaveTable.Text = "Dil"
         btnLeaveTable.UseVisualStyleBackColor = True
         ' 
         ' btnMarkAsPaid
         ' 
-        btnMarkAsPaid.Location = New Point(904, 592)
+        btnMarkAsPaid.Location = New Point(901, 530)
         btnMarkAsPaid.Name = "btnMarkAsPaid"
-        btnMarkAsPaid.Size = New Size(112, 34)
+        btnMarkAsPaid.Size = New Size(112, 80)
         btnMarkAsPaid.TabIndex = 6
         btnMarkAsPaid.Text = "Paguaj"
         btnMarkAsPaid.UseVisualStyleBackColor = True
         ' 
         ' btnSaveBillFile
         ' 
-        btnSaveBillFile.Location = New Point(158, 565)
+        btnSaveBillFile.Location = New Point(731, 530)
         btnSaveBillFile.Name = "btnSaveBillFile"
-        btnSaveBillFile.Size = New Size(112, 61)
+        btnSaveBillFile.Size = New Size(112, 80)
         btnSaveBillFile.TabIndex = 7
         btnSaveBillFile.Text = "Ruaj Faturen"
         btnSaveBillFile.UseVisualStyleBackColor = True
@@ -110,7 +110,8 @@ Partial Class TableOrderForm
         ' 
         AutoScaleDimensions = New SizeF(10F, 25F)
         AutoScaleMode = AutoScaleMode.Font
-        ClientSize = New Size(1255, 720)
+        BackColor = Color.FromArgb(CByte(248), CByte(249), CByte(252))
+        ClientSize = New Size(1174, 675)
         Controls.Add(btnSaveBillFile)
         Controls.Add(btnMarkAsPaid)
         Controls.Add(btnLeaveTable)
